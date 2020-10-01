@@ -46,12 +46,22 @@ html,body{
     margin: 0px;
     width: 50%;
     height:calc(100%-30px);
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
+    /* display:flex;
+    flex-direction: column;
+    justify-content: start; */
     overflow: auto;
 
+}
+#left::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+#left::-webkit-scrollbar-track {
+  background: white;        /* color of the tracking area */
+}
+#left::-webkit-scrollbar-thumb {
+  background-color: grey;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid white;  /* creates padding around scroll thumb */
 }
 #right{
     padding-top: 30px;padding-left: 30px;
@@ -66,17 +76,27 @@ html,body{
     align-items: flex-start;
     overflow: auto;
 }
+#right::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+#right::-webkit-scrollbar-track {
+  background: grey;        /* color of the tracking area */
+}
+#right::-webkit-scrollbar-thumb {
+  background-color: white;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid grey;  /* creates padding around scroll thumb */
+}
 #md-area {
     cursor: pointer;
     border: none;
     width: 100%;
-    height: 100%;
+    height: 50%;
     font-size: 18px;
     font-weight: bold;
     outline: none;
     resize: none;
-    overflow-y:hidden;
-
+    overflow: hidden;
 }
 
 #show-area {

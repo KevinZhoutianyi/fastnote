@@ -21,18 +21,28 @@
     </script>
     <script src="./js/jquery.js"></script>
     
-    <script>
-        function flex(){
-            var text = document.getElementById("md-area");
-            text.style.height = text.scrollHeight + 'px';
+    <script type="text/javascript">
+
+        document.onkeydown=function() {
+        if (event.keyCode == 8) {
+            if (document.activeElement.type == "text"||document.activeElement.type == "textarea"||document.activeElement.type == "password") {
+                if (document.activeElement.readOnly == false)
+                    m = document.getElementById("md-area");
+                    m.style.height='auto';
+                    m.style.height = m.scrollHeight + 'px';
+                    return true;
+            }
+            
+            return false;
         }
+    }
     </script>
     <div id="bg">
-        <div id="left"  > 
-            <textarea name="" id="md-area" cols="30" rows="10"  onkeyup=mdSwitch() onkeydown="flex()" ></textarea>
-            
+        <div id="left"  class=syncscroll name=myElements> 
+            <textarea name="" id="md-area" cols="30" rows="10"  onkeyup=mdSwitch()  onpropertychange=" this.style.height = this.scrollHeight + 'px'; "  oninput="this.style.height = this.scrollHeight + 'px';"></textarea>
+            <div style="height: 40%;"></div>
         </div>
-        <div id="right" >
+        <div id="right" class=syncscroll name=myElements>
             <div id="show-area">
                 <div style="height: 20px;"></div>
             </div>
